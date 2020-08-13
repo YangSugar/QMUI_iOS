@@ -317,4 +317,16 @@ const NSInteger QMUITipsAutomaticallyHideToastSeconds = -1;
     [self hideAllToastInView:nil animated:NO];
 }
 
+
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitTestView = [super hitTest:point withEvent:event];
+    if (hitTestView == self) {
+        return nil;
+    } else {
+        return hitTestView;
+    }
+}
+
+
+
 @end
